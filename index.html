@@ -12,15 +12,20 @@
     <div class="contiar">
         <div class="stopwacht">
             <p>
-                <span class="sec">00</span>
-                <span class="tens">00</span>
+                <span id="min">00</span>
+                <span id="sec">00</span>
+                <span id="msec">00</span>
             </p>
-            <br>
-            <button class="bnt-start">start</button>
-            <button class="bnt-stop">stop</button>
-            <button class="bnt-reset">reset</button>
+            <button onclick="Start()" id="btn-start">start</button>
+            <button onclick="Stop()" id="btn-stop">stop</button>
+            <button onclick="Reset()" id="btn-reset">reset</button>
         </div>
     </div>
+
+
+
+
+    <script src="app.js"></script>
 </body>
 
 </html>
