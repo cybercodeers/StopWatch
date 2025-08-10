@@ -1,0 +1,24 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background: #EEAECA;
+    background: radial-gradient(circle, rgba(238, 174, 202, 1) 22%, rgba(148, 187, 233, 1) 100%);
+}
+.contiar{
+    margin-left: 570px;
+   margin-top: 250px;
+}
+.text{
+    margin-left: 40px;
+    font-size: 50px;
+    color: aliceblue;
+}
+
+.btn button{
+    font-size: 20px;
+    margin-left: 20px;
+    padding: 8px ;
+    border-radius: 20px;
+    background-color: rgb(255, 251, 251);
+    color: rgb(0, 0, 0);
+}

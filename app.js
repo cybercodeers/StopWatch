@@ -1,47 +1,56 @@
 var millisecond = document.getElementById("msec")
 var minte = document.getElementById("min")
 var second = document.getElementById("sec")
-var Start = document.getElementById("btn-start")
-var Stop = document.getElementById("btn-stop")
-var Reset = document.getElementById("btn-reset")
+var Startbtn = document.getElementById("btn-start")
+var Stopbtn = document.getElementById("btn-stop")
+var Resetbtn = document.getElementById("btn-reset")
 
 var millisec = 0
 var sec1 = 0
 var mint = 0
+var interval; 
+Startbtn.disabled= false
+Stopbtn.disabled= true
+Resetbtn.disabled= true
 
-function timer() {
-    Number(millisec++)
-    if (millisec == 99) {
-        Number(sec1++)
-        millisec=0
+function timer(){
+    millisec++
+    millisecond.innerHTML = millisec
+    if(millisec == 99){
+        sec1++
+        second.innerHTML = sec1
+        millisec = 0
     }
-     
+
     if(sec1 == 59){
-        Number(mint++)
-        sec1=0
-        millisec=0
+        mint++
+        minte.innerHTML=mint
+        sec1 =0
+        millisec = 0
     }
 }
 
-
-function Start() {
-    interval = setInterval(timer, 10)
-    startbtn.disabled = true
+function start(){
+interval = setInterval(timer ,10)
+Startbtn.disabled= true
+Stopbtn.disabled= false
+Resetbtn.disabled= false
 }
-function Stop() {
+ 
+function stop(){
     clearInterval(interval)
-    startbtn.disabled = false
-    pausebtn.disabled = true
+Startbtn.disabled=false 
+Stopbtn.disabled= true
+Resetbtn.disabled= false
 }
-function Reset(){
-    Pause()
-    mint = "00"
-    sec1 = "00"
-    millisec = "00"
-    millisecond.innerHTML= millisec
-    second.innerHTML=sec1
-    minte.innerHTML = mint
-    Reset.disabled = true
-    Stop.disabled = true
-    Start.disabled = false
+
+function reset(){
+stop()
+millisec = 0
+sec1 = 0
+mint = 0
+millisecond.innerHTML = millisec
+minte.innerHTML = mint
+second.innerHTML = sec1
+
 }
